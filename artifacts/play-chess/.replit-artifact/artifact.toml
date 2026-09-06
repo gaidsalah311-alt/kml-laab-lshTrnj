@@ -1,0 +1,24 @@
+kind = "mobile"
+previewPath = "/play-chess/"
+title = "إلعب معي شطرنج"
+description = "تطبيق شطرنج عربي للموبايل يتيح اللعب على نفس الجهاز أو مواجهة الحاسوب، مع حفظ المباراة والإعدادات والإحصائيات محليًا."
+version = "1.0.0"
+id = "artifacts/play-chess"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/play-chess/" ]
+localPort = 22229
+
+[services.development]
+run = "pnpm --filter @workspace/play-chess run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/play-chess", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/play-chess", "run", "serve" ]
+
+[services.env]
+PORT = "22229"
+BASE_PATH = "/play-chess/"

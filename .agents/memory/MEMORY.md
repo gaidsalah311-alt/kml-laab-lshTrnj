@@ -1,0 +1,1 @@
+- [Chess state persistence](chess-state-persistence.md) — rule-dependent state must travel with every saved and undoable position.
